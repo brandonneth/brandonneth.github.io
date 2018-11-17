@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Me :)"
+title: "Who am I, you ask?"
 excerpt: "about me"
 author_profile: true
 redirect_from: 
@@ -24,6 +24,6 @@ My research interests include:
 * Graph theory
 * Archaeology
 
-When I am not working on research, I <DO THINGS>
+When I am not working on research, I enjoy music, yoga, and spending time with my fraternity brothers.
 
 
