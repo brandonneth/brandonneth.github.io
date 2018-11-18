@@ -1,19 +1,16 @@
 ---
 layout: archive
-title: "Publications"
-permalink: /publications/
+title: "Wheel"
+permalink: /wheel/
 author_profile: true
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
 
 {% include base_path %}
 
 ![alt text][construction]
 
-Oops! This page is under construction.
+Oops! This page is under construction. One day it will have details about my archeaology research.
 
 
 
