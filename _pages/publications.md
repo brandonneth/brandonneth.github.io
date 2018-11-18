@@ -12,13 +12,7 @@ author_profile: true
 {% include base_path %}
 
 
-
-<!
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
-!>
 Oops! This page is under construction.
 ![alt text][construction]
 
-[construction]: pikaconstruction.gif
+[construction]: brandonneth.github.io/images/pikaconstruction.gif
