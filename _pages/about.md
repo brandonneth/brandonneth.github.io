@@ -11,7 +11,7 @@ I am many things, but first and foremost I am an undergraduate research assistan
 I work on the Science up to Par (s2par) project with Dr. Michelle Strout,
 where I focus on the automatic parallelization of binary executables.
 
-I also do experimental archaeology research as a University of Arizona Spirit of Inquiry recipient.
+I also do experimental archaeology research as a University of Arizona Spirit of Inquiry grant recipient.
 I work with Dr. Elena Hasaki on modelling ancient Greek pottery techniques,
 where I focus on creating tools that aid in the data analysis process.
 
