@@ -15,4 +15,4 @@ author_profile: true
 Oops! This page is under construction.
 ![alt text][construction]
 
-[construction]: brandonneth.github.io/images/pikaconstruction.gif
+[construction]: http://rs364.pbsrc.com/albums/oo83/fruitsnax/pikachu/pikachu_under_construction.gif~c200
