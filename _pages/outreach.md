@@ -15,4 +15,5 @@ In my spring semester, I joined Delta Lambda Phi, a social fraternity for gay, b
 
 
 That same semester, I made one of the most impactful decisions of my life: the switch to computer science. At the risk of sounding corny, nothing in my life has brought me the same amount of joy that computer science has. 
-A little over a year later, I was selected as a Computer Science Student Ambassador and given an opportunity to share my passion for CS with others.
+A little over a year later, I was selected as a Computer Science Student Ambassador and given an opportunity to share my passion for CS with others. 
+Since then, I have had the amazing opportunity to visit schools around Tucson and speak with students about computer science. From science fairs to STEM nights to classrooms, I have shown kids that being queer can still mean being a computer scientist.
