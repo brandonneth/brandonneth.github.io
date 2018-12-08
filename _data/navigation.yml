@@ -20,5 +20,8 @@ main:
 
   - title: "Wheel"
     url: /wheel/
+
+  - title: "DepVis"
+    url: /DepVis/
  #- title: "Guide"
  #  url: /markdown/

@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Who am I, you ask?"
+title: "About"
 excerpt: "about me"
 author_profile: true
 redirect_from: 
