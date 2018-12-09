@@ -1,0 +1,51 @@
+---
+permalink: /wheeltool.html
+author_profile: true
+---
+
+<html>
+<head>
+	<title>Wheel</title>
+	
+	<script src="Wheel.js" type="text/javascript"></script>
+  
+  <script src="d3.v5.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="Wheel.css" />
+</head>
+<body>
+  
+  This webpage contains a tool to measure the rotational velocity of wheels by analyzing a video recording of the wheel spinning.
+  <br>To use the tool, begin by selecting the video file you want to analyze.
+  <br>The video should appear in the box below.
+  <br>There are certain key commands you will use to navigate the video and record data.
+  <br>
+  <br>Once the video is loaded, the 'n' key will progress through the video frame by frame.
+  <br>The 's' key will restart the data collection at the current time stamp.
+  <br>Type any number keys to enter numbers.
+  <br>The 'enter' key will submit the entered value. 
+  <br>The 'n' key will submit any entered value and move to the next frame.
+  <br>
+  <br>The two graphs plot the position and average velocity of the wheel.
+  <br>To export the data as a .csv file, press the 'e' key.
+
+
+
+
+  <br>
+  <br>
+  Select a file: <input type="file" name="myFile">
+
+  <div class="container">
+   <video id='video' class="video-js"> </video>
+   <div class="view" style="float: right;">
+     <svg id="graph"> </svg>
+   </div>
+   <div class="view" style="float: right;">
+     <svg id="vgraph"> </svg>
+   </div>
+
+  </div>
+  
+  <input type="number" name="rotations" id='rotations'>
+</body>
+</html>
