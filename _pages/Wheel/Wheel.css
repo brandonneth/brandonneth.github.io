@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+    padding: 0;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+div {
+    padding: 5px;
+}
+
+
+
+#graph {
+    width: 800px;
+    height: 400px;
+    border: 1px black solid;
+}
+#vgraph {
+    width: 800px;
+    height: 400px;
+    border: 1px red solid;
+}
+#video {
+    width: 410px;
+    height: 410px;
+    border: 1px black solid;
+    
+}
+#rotations {
+    width: 200px;
+    height: 100px;
+    border: 1px blue solid;
+}
+path.link {
+	fill: none;
+	
+}
+.container {
+    position: relative;
+}
+
+.view {
+    width: 610px;
+}
+
+
+.view2 {
+    width: 200px;
+}
+
+
