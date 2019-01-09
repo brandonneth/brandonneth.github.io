@@ -24,6 +24,6 @@ My research interests include:
 * Graph theory
 * Archaeology
 
-When I am not working on research, I enjoy music, yoga, and spending time with my fraternity brothers.
+When I am not working on research, I enjoy music, yoga, and volunteering with my fraternity brothers.
 
 
