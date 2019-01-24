@@ -11,7 +11,7 @@ redirect_from:
 
 Oops! This page is under construction.
 
-[cv](cv/nethCV.pdf)
+Here is a link to my *[CV](cv/nethCV.pdf)*
 
 [construction]: http://rs364.pbsrc.com/albums/oo83/fruitsnax/pikachu/pikachu_under_construction.gif~c200
 
