@@ -365,7 +365,7 @@ var create_velocity_graph = function(elm)
 				velocityTimeStamp = (lastPoint[0] + point[0]) / 2.0
 
 
-				velocityPoint = [velocityTimeStamp, velocity]
+				velocityPoint = [velocityTimeStamp, velocity * 60]
 
 				velocityData.push(velocityPoint)
 				lastPoint = point
