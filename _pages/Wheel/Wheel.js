@@ -358,14 +358,14 @@ var create_velocity_graph = function(elm)
 
 				dx = point[0] - lastPoint[0]
 				dy = point[1] - lastPoint[1]
-				velocity = dy * 1.0 / dx * 1.0
+				velocity = 60 * dy * 1.0 / dx * 1.0
 				maxVelocity = velocity > maxVelocity ? velocity : maxVelocity;
 
 
 				velocityTimeStamp = (lastPoint[0] + point[0]) / 2.0
 
 
-				velocityPoint = [velocityTimeStamp, velocity * 60]
+				velocityPoint = [velocityTimeStamp, velocity]
 
 				velocityData.push(velocityPoint)
 				lastPoint = point
