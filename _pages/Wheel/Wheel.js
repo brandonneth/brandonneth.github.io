@@ -14,6 +14,7 @@ var wheel = {
 
 var frameStep = 1;
 var frameTime = 1/25;
+var frameDuration = frameTime;
 var frameNum = 0;
 var started = false
 
@@ -117,8 +118,8 @@ create_graph = function(elm)
 	{
 
 		//data is a array of tuples (frame num, position)
-		console.log('graph._update_data')
-		console.log('data:', data)
+		//console.log('graph._update_data')
+		//console.log('data:', data)
 		if(data.length == 0)
 		{
 			points = graph.selectAll('.position').data(data)
@@ -131,11 +132,11 @@ create_graph = function(elm)
 		var xdomain = [xdomainLow, xdomainHigh]
 		var xrange = [0, graph.attr('width')]
 
-		console.log('graph update_data xdomain xrange', xdomain, xrange)
+		//console.log('graph update_data xdomain xrange', xdomain, xrange)
 
 		xscale.range(xrange).domain(xdomain)
 		
-		console.log('after assignment:', xscale.domain(), xscale.range())
+		//console.log('after assignment:', xscale.domain(), xscale.range())
 		xAxis.attr('class', 'x axis')
 			.attr('transform', 'translate(0,' + graph.attr('height') + ')')
 			.call(d3.axisBottom(xscale))
@@ -438,6 +439,41 @@ var reset = function()
 	wheel.update()
 }
 
+var undo_one_input = function() 
+{
+	console.log('undoing one input')
+	if(wheel.data.length == 0){
+		console.log('no data to undo. returning')
+		return;
+	}
+
+
+	mostRecentInput = wheel.data.pop()
+
+
+	mostRecentInputTime = mostRecentInput[0]
+
+
+	if (mostRecentInputTime == wheel.player.currentTime) {
+		//then we're at a marked point in the video
+		// we need to go back one
+
+		destinationInput = wheel.data.pop()
+	} else {
+		//we're between or after a marked point
+		// we need to go back to the immediately 
+		//following the last input
+		destinationInput = mostRecentInput
+	}
+
+	//go to destination input
+	wheel.data.push(destinationInput)
+	wheel.player.currentTime = destinationInput[0]
+	wheel.update()
+
+
+
+}
 
 //MARK: key handling
 
@@ -474,11 +510,17 @@ document.addEventListener('keypress', function (evt)
 	{
 
 		console.log('nkey')
-		wheel.player.currentTime = Math.min(video.duration, video.currentTime + frameStep * 1/25);
+		wheel.player.currentTime = Math.min(video.duration, wheel.player.currentTime + frameStep * frameDuration);
 
 		frameNum = frameNum + frameStep
 		wheel.input.blur()
 
+	}
+
+	ukey = 117
+	if(evt.keyCode == ukey) {
+		console.log("u key")
+		undo_one_input()
 	}
 
 	ekey = 101
@@ -493,21 +535,22 @@ document.addEventListener('keypress', function (evt)
 	enterKey = 13
 	if(evt.keyCode == enterKey || evt.keyCode == nkey)
 	{
-		update_data()
+		consume_amount_input()
 	}
 
 	wheel.update()
 });
 
 
-update_data = function()
+consume_amount_input = function()
 {
-	console.log('update_data')
+
 
 	console.log('input:', wheel.input.value)
 
 	value = wheel.input.value
 
+	
 	if(value == '')
 	{
 		return
