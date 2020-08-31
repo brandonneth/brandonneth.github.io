@@ -385,6 +385,31 @@ var create_velocity_graph = function(elm)
 
 }//create_velocity_graph
 
+
+let velocity_data = function(data) {
+	velocityData = []
+
+
+	lastPoint = data[0]
+	for (var i = 1; i < data.length; i++) {
+		point = data[i]
+
+		dx = point[0] - lastPoint[0]
+		dy = point[1] - lastPoint[1]
+		velocity = 60 * dy * 1.0 / dx * 1.0
+
+		velocityTimeStamp = (lastPoint[0] + point[0]) / 2.0
+
+		velocityPoint = [velocityTimeStamp, velocity]
+
+		velocityData.push(velocityPoint)
+		lastPoint = point
+
+	}
+
+	return velocityData;
+}
+
 var create_table = function(id)
 {
 	console.log('create_table(', id)
@@ -573,12 +598,22 @@ var export_data = function()
 {
 	filename = 'data.csv'
 
-	string = 'Time (s),Position (Rotations)\n'
+	string = 'Time (s),Position (Rotations),Velocity (rpm)\n'
 	rotations = 0
+	rotationPoints = []
+
 	for (var i = 0; i < wheel.data.length; i++) {
 		point = wheel.data[i]
 		rotations += point[1]
-		string += point[0] + ', ' + rotations + '\n'
+		rotationPoints.push([point[0], rotations])
+	}
+
+	velocityData = velocity_data(rotationPoints)
+
+	for (var i = 0; i < wheel.data.length; i++) {
+		position = rotationPoints[i]
+		velocity = velocityData[i]
+		string += position[0] + ', ' + position[1] + ', ' + velocity[1] + '\n'
 	}
 
 	console.log(string)
