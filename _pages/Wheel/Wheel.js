@@ -34,6 +34,7 @@ window.addEventListener('load', function ()
 	console.log('input oninputed')
 	console.log(fileInput.files)
 
+	//document.querySelector('video').style.width = "50%";
 
 	file = fileInput.files[0]
 
@@ -414,14 +415,14 @@ var create_table = function(id)
 {
 	console.log('create_table(', id)
 
-	var table = d3.select('body').append('table').attr('border', 1)
+	var table = d3.select(".dataTable").append('table').attr('border', 1)
 
 	var thead = table.append('thead')
 	var tbody = table.append('tbody')
 
 	headers = thead.append('tr')
-	headers.append('th').text('Time (s)')
-	headers.append('th').text('Position (Rotations)')
+	headers.append('th').text('Time (s)').style("background-color","white")
+	headers.append('th').text('Position (Rotations)').style("background-color","white")
 
 	
 	
@@ -446,9 +447,9 @@ var create_table = function(id)
 					.append('tr')
 
 			rows.append('td')
-					.text(d => d[0])
+					.text(d => d[0]).style("background-color","white")
 			rows.append('td')
-					.text(d => d[1])						
+					.text(d => d[1]).style("background-color","white")						
 
 
 		}

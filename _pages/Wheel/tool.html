@@ -6,7 +6,7 @@ permalink: /wheeltool.html
 
 <html>
 <head>
-	<title>Wheel</title>
+	<title>WheelVis</title>
 	
 	<script src="_pages/Wheel/Wheel.js" type="text/javascript"></script>
   
@@ -14,49 +14,59 @@ permalink: /wheeltool.html
   <link rel="stylesheet" type="text/css" href="_pages/Wheel/Wheel.css" />
 </head>
 <body>
+  <div class="instructions">
+  	<p class="sansserif">
+  		This webpage contains a tool to measure the rotational velocity of wheels by analyzing a video recording of the wheel spinning. To use the tool, begin by selecting the video file you want to analyze. The video should appear in the box below.
+  	</p>
+  	<p class="sansserif">
+  		Once the video is loaded, the 'n' key will progress through the video frame by frame. The 's' key will restart the data collection at the current time stamp. Type any number keys to enter numbers. The 'enter' key will submit the entered value.  The 'n' key will submit any entered value and move to the next frame. To export the data as a .csv file, press the 'e' key.
+  	</p>
   
-  This webpage contains a tool to measure the rotational velocity of wheels by analyzing a video recording of the wheel spinning.
-  <br>To use the tool, begin by selecting the video file you want to analyze.
-  <br>The video should appear in the box below.
-  <br>There are certain key commands you will use to navigate the video and record data.
-  <br>
-  <br>Once the video is loaded, the 'n' key will progress through the video frame by frame.
-  <br>The 's' key will restart the data collection at the current time stamp.
-  <br>Type any number keys to enter numbers.
-  <br>The 'enter' key will submit the entered value. 
-  <br>The 'n' key will submit any entered value and move to the next frame.
-  <br>
-  <br>The two graphs plot the position and average velocity of the wheel.
-  <br>To export the data as a .csv file, press the 'e' key.
-
-
-
-
-  <br>
-  <br>
-  Select a file: <input type="file" name="myFile">
-
-  <div class="container">
-   <video id='video' class="video-js"> </video>
-
-  <table style="float: right">
-  	<tr >
-  		<td>
-   <div class="view" style='margin:0 180px 0 0'>
-     <svg id="graph"> </svg>
-   </div>
-		</td>
-	</tr>
-	<tr>
-		<td >
-   <div class="view" style="margin:0 180px 0 0">
-     <svg id="vgraph"> </svg>
-   </div>
-   </td>
-	</tr>
-  </table>
   </div>
   
-  <input type="number" name="rotations" id='rotations'>
+
+
+
+
+  <br>
+  <br>
+  Select a file: <input type="file" id="myFile">
+  <br>
+  Entry: <input type="number" name="rotations" id='rotations'>
+  <div class="container">
+   
+
+	<table style="float: left">
+		<tr>
+			<td style="background-color:blue;">
+				<video id='video' class="video-js"> </video>
+			</td>
+
+			<td>
+				<div class="view" style='margin:0 180px 0 0'>
+					<svg id="graph"> </svg>
+				</div>
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+				<div class="dataTable">
+				</div>
+			</td>
+
+			<td>
+				<div class="view" style="margin:0 180px 0 0">
+					<svg id="vgraph"> </svg>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+  	
+  </div>
+  
+  <br>
+  
 </body>
 </html>
