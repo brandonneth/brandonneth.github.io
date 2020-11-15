@@ -48,9 +48,9 @@ window.addEventListener('load', function ()
 	wheel.input = document.getElementById('rotations')
 	console.log('player:', wheel.player)
 
-	wheel.graph = create_graph('graph')
+	wheel.graph = create_graph('positiongraph')
 
-	wheel.vgraph = create_velocity_graph('vgraph')
+	wheel.vgraph = create_velocity_graph('velocitygraph')
 
 	wheel.table = create_table('table')
 });
@@ -423,7 +423,7 @@ var create_table = function(id)
 	headers = thead.append('tr')
 	headers.append('th').text('Time (s)').style("background-color","white")
 	headers.append('th').text('Position (Rotations)').style("background-color","white")
-
+	
 	
 	
 	return {

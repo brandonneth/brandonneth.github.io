@@ -14,9 +14,14 @@ permalink: /wheeltool.html
   <link rel="stylesheet" type="text/css" href="_pages/Wheel/Wheel.css" />
 </head>
 <body>
+	<h1>WheelVis: A Web App for Analysing Wheel Velocity</h1>
+	<h3>Created by Brandon Neth</h3>
+	<img src="_pages/Wheel/runner.png">
+	<img src="_pages/Wheel/runner.png">
+	<img src="_pages/Wheel/runner.png">
   <div class="instructions">
   	<p class="sansserif">
-  		This webpage contains a tool to measure the rotational velocity of wheels by analyzing a video recording of the wheel spinning. To use the tool, begin by selecting the video file you want to analyze. The video should appear in the box below.
+  		This webpage contains WheelVis, a tool to measure the rotational velocity of wheels by analyzing a video recording of the wheel spinning. To use the tool, begin by selecting the video file you want to analyze. The video should appear in the box below.
   	</p>
   	<p class="sansserif">
   		Once the video is loaded, the 'n' key will progress through the video frame by frame. The 's' key will restart the data collection at the current time stamp. Type any number keys to enter numbers. The 'enter' key will submit the entered value.  The 'n' key will submit any entered value and move to the next frame. To export the data as a .csv file, press the 'e' key.
@@ -38,26 +43,26 @@ permalink: /wheeltool.html
 
 	<table style="float: left">
 		<tr>
-			<td style="background-color:blue;">
+			<td style="background-color:LightSteelBlue;">
 				<video id='video' class="video-js"> </video>
 			</td>
 
-			<td>
+			<td style="background-color:#CC6600;">
 				<div class="view" style='margin:0 180px 0 0'>
-					<svg id="graph"> </svg>
+					<svg id="positiongraph"> </svg>
 				</div>
 			</td>
 		</tr>
 	
 		<tr>
-			<td>
+			<td style="background-color: #CC6600;">
 				<div class="dataTable">
 				</div>
 			</td>
 
-			<td>
+			<td style="background-color: #CC6600;">
 				<div class="view" style="margin:0 180px 0 0">
-					<svg id="vgraph"> </svg>
+					<svg id="velocitygraph"> </svg>
 				</div>
 			</td>
 		</tr>
@@ -67,6 +72,6 @@ permalink: /wheeltool.html
   </div>
   
   <br>
-  
+
 </body>
 </html>
