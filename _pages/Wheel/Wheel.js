@@ -616,10 +616,15 @@ var export_data = function()
 
 	for (var i = 0; i < wheel.data.length; i++) {
 		position = rotationPoints[i]
-		velocity = velocityData[i]
-		string += String(position[0]) + ', ' + String(position[1]) + ', ' + String(velocity[1]) + '\n'
+
+		string += String(position[0]) + ', ' + String(position[1]) + ', \n'
 	}
 
+	for(var i = 0; i < velocityData.length; i++) {
+		v = velocityData[i];
+		console.log("velocity point:", v);
+		string += String(v[0]) + ", ," + String(v[1]) + "\n"
+	}
 	//console.log(string)
 
 
