@@ -117,7 +117,9 @@ create_graph = function(elm)
 
 	var _update_data = function(data)
 	{
-
+		
+		//console.log("view width", view.attr("width"))
+		//console.log("view scroll width", view.attr("scrollWidth"))
 		//data is a array of tuples (frame num, position)
 		//console.log('graph._update_data')
 		//console.log('data:', data)
@@ -127,6 +129,9 @@ create_graph = function(elm)
 			points.exit().remove()
 			return;
 		}
+
+		xscale = d3.scaleLinear().range([0, graph.attr('width')])
+
 		xdomainLow = Math.floor(data[0][0])
 		xdomainHigh = Math.ceil(data[data.length - 1][0])
 		
@@ -138,9 +143,7 @@ create_graph = function(elm)
 		xscale.range(xrange).domain(xdomain)
 		
 		//console.log('after assignment:', xscale.domain(), xscale.range())
-		xAxis.attr('class', 'x axis')
-			.attr('transform', 'translate(0,' + graph.attr('height') + ')')
-			.call(d3.axisBottom(xscale))
+		xAxis.call(d3.axisBottom(xscale))
 
 
 
@@ -614,10 +617,10 @@ var export_data = function()
 	for (var i = 0; i < wheel.data.length; i++) {
 		position = rotationPoints[i]
 		velocity = velocityData[i]
-		string += position[0] + ', ' + position[1] + ', ' + velocity[1] + '\n'
+		string += String(position[0]) + ', ' + String(position[1]) + ', ' + String(velocity[1]) + '\n'
 	}
 
-	console.log(string)
+	//console.log(string)
 
 
 	var file = new Blob([string], {type: 'csv'});
